@@ -10,6 +10,6 @@ node('linux') {
 		sh 'ant -f build.xml -v'        
 	} 
 	stage('Deploy') {
-		sh 'aws s3 cp dist/rectangle-3.jar s3://jenkins-s3bucket-10yn3xnstrpvr.s3.amazonaws.com'
+		sh 'aws s3 cp rectangle-4.jar s3://jenkins-s3bucket-10yn3xnstrpvr.s3.amazonaws.com'
 	}
 }
