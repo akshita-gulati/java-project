@@ -10,7 +10,6 @@ node('linux') {
 		sh 'ant -f build.xml -v'        
 	}  
 	stage('Deploy') {
-		pip install awscli
 		sh 'aws s3 cp rectangle-2.jar s3://jenkins-s3bucket-10yn3xnstrpvr.s3.amazonaws.com/rectangle-2.jar/'
 	}
 }
