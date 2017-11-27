@@ -11,6 +11,6 @@ node('linux') {
 	}  
 	stage('Deploy') {
 		pip install awscli
-		aws s3 cp 'rectangle-2.jar' s3://jenkins-s3bucket-10yn3xnstrpvr/rectangle-2.jar/
+		sh 'aws s3 cp rectangle-2.jar s3://jenkins-s3bucket-10yn3xnstrpvr.s3.amazonaws.com/rectangle-2.jar/'
 	}
 }
