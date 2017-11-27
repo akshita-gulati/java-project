@@ -9,4 +9,7 @@ node('linux') {
     stage('Build') {                                   
 		sh 'ant -f build.xml -v'        
 	}
+    stage('Deploy') {
+		sh 'aws s3 cp ${WORKSPACE}/dist/rectangle-$BUILD_NUMBER.jar s3://jenkins-s3bucket-10yn3xnstrpvr'
+	}
 }
